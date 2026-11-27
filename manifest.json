@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "SoloData Copy-Paste Tabel Helper",
+  "version": "1.0.0",
+  "description": "Menyalin data tabel dari SoloData lama dan mengisikannya ke SoloData baru secara lokal (tanpa auto-simpan).",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://egov.phicos.co.id/surakarta/solodata-lama/*",
+    "http://egov.phicos.co.id/surakarta/solodata-lama/*",
+    "https://solodata.surakarta.go.id/*"
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "action": {
+    "default_title": "SoloData Copy-Paste Helper",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://egov.phicos.co.id/surakarta/solodata-lama/*",
+        "http://egov.phicos.co.id/surakarta/solodata-lama/*",
+        "https://solodata.surakarta.go.id/*"
+      ],
+      "js": [
+        "shared/table-engine.js",
+        "content/panel.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

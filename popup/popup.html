@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>SoloData Helper</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="hdr">
+    <h1>SoloData Helper</h1>
+    <span class="pill">Lokal &amp; Aman</span>
+  </header>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="lbl">Data Tersalin Saat Ini</div>
+      <div id="status-title" class="val">Memuat...</div>
+      <div id="status-meta" class="sub">-</div>
+    </section>
+
+    <section id="preview-box" class="card hidden">
+      <div class="lbl">Contoh 5 Baris Pertama</div>
+      <table class="mini-tbl">
+        <thead>
+          <tr>
+            <th>Kunci</th>
+            <th>Jenis</th>
+            <th>Isian</th>
+          </tr>
+        </thead>
+        <tbody id="preview-body"></tbody>
+      </table>
+    </section>
+
+    <div class="actions">
+      <button id="btn-show-panel" class="btn btn-primary" type="button">
+        Tampilkan Panel di Halaman Ini
+      </button>
+      <button id="btn-clear-data" class="btn btn-secondary" type="button">
+        Bersihkan Data Tersalin
+      </button>
+    </div>
+
+    <p id="msg" class="msg"></p>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
